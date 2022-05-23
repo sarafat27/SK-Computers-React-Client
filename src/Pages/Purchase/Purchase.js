@@ -66,7 +66,7 @@ const Purchase = () => {
     }
 
     return (
-        <div className='px-6'>
+        <div className='p-6'>
             <div class="card bg-base-200 shadow-xl">
                 <figure><img className='w-44' src={image} alt="Album" /></figure>
                 <div class="card-body text-center">
