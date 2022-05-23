@@ -1,9 +1,10 @@
 import React from 'react';
 import { useCreateUserWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
+import useToken from '../../Hooks/useToken';
 import Loading from '../Shared/Loading';
 
 const Register = () => {
@@ -15,9 +16,15 @@ const Register = () => {
         error,
     ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
     const { register, formState: { errors }, handleSubmit } = useForm();
+    const navigate = useNavigate();
+    const [token] = useToken(user || gUser);
 
     if (loading || gLoading) {
         return <Loading></Loading>
+    }
+
+    if (token) {
+        navigate('/home');
     }
 
     let signInError;
