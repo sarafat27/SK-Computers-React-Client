@@ -32,8 +32,8 @@ const Contact = () => {
                 {
                     contact.map((element, index) => <div
                         key={index}
-                        class="card lg-w-mx bg-gray-200 shadow-xl rounded-full text-center">
-                        <div class="card-body">
+                        className="card lg-w-mx bg-gray-200 shadow-xl rounded-full text-center">
+                        <div className="card-body">
                             <span className='text-green-600'>{element.icon}</span>
                             <p className='font-bold text-5xl'>{element.medium}</p>
                             <p className='font-bold text-2xl'>{element.item}</p>

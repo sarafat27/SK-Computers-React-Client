@@ -67,10 +67,10 @@ const Purchase = () => {
 
     return (
         <div className='p-6'>
-            <div class="card bg-base-200 shadow-xl">
+            <div className="card bg-base-200 shadow-xl">
                 <figure><img className='w-44' src={image} alt="Album" /></figure>
-                <div class="card-body text-center">
-                    <h2 class="text-3xl font-bold">{name}</h2>
+                <div className="card-body text-center">
+                    <h2 className="text-3xl font-bold">{name}</h2>
                     <p>{description}</p>
                     <p className='font-bold'>min order quantity: {minimumOrderQuantity}</p>
                     <p className='font-bold'>available quantity: {availableQuantity}</p>
