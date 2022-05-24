@@ -40,6 +40,7 @@ const Purchase = () => {
         event.preventDefault();
         const order = {
             product: name,
+            image,
             email: user.email,
             quantity: event.target.quantity.value,
             totalPrice,
