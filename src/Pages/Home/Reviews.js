@@ -25,14 +25,14 @@ const Reviews = () => {
                 {
                     reviews.map(review => <div
                         key={review._id}
-                        class="card lg-w-mx bg-neutral text-neutral-content">
-                        <div class="card-body items-center text-center">
-                            <div class="avatar">
-                                <div class="w-40 h-24 rounded">
+                        className="card lg-w-mx bg-neutral text-neutral-content">
+                        <div className="card-body items-center text-center">
+                            <div className="avatar">
+                                <div className="w-40 h-24 rounded">
                                     <img src="https://thumbs.dreamstime.com/b/time-review-words-clock-chalkboard-watch-concept-40009136.jpg" alt='' />
                                 </div>
                             </div>
-                            <h2 class="card-title font-bold text-green-400">{review.name}</h2>
+                            <h2 className="card-title font-bold text-green-400">{review.name}</h2>
                             <p className='text-white'>{review.review}</p>
                             <div>
                                 {

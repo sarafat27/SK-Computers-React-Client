@@ -28,7 +28,7 @@ const DeleteProduct = ({ deleteProduct, setDeleteProduct, refetch }) => {
                     <h3 className="font-bold text-lg">Are you sure you want to delete {product}?</h3>
                     <div className="modal-action">
                         <button onClick={handleDelete} className='btn btn-error'>Delete</button>
-                        <label for="delete-modal" className="btn btn-success">Cancel</label>
+                        <label htmlFor="delete-modal" className="btn btn-success">Cancel</label>
                     </div>
                 </div>
             </div>
