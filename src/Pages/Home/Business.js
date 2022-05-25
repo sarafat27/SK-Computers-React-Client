@@ -1,6 +1,6 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCoffee, faFlag, faPersonCircleQuestion, faThumbsUp, faUser } from '@fortawesome/free-solid-svg-icons'
+import { faFlag, faThumbsUp, faUser } from '@fortawesome/free-solid-svg-icons'
 import BusinessCard from './BusinessCard';
 
 const Business = () => {
@@ -23,10 +23,10 @@ const Business = () => {
     ]
     return (
         <div>
-            <h2 className="text-center font-bold text-6xl text-green-600 my-8">
+            <h2 className="text-center font-bold text-4xl text-green-600 mt-12">
                 Millions business trusts us
             </h2>
-            <p className='text-3xl text-center my-8'>Try to understand users expectation</p>
+            <p className='text-3xl text-center mb-8'>Try to understand users expectation</p>
             <div className='grid lg:grid-cols-3 md:grid-cols-2 gap-6 p-6'>
                 {
                     business.map((item, index) => <BusinessCard

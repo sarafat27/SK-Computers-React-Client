@@ -1,5 +1,5 @@
 import React from 'react';
-import { useCreateUserWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
@@ -16,10 +16,11 @@ const Register = () => {
         error,
     ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
     const { register, formState: { errors }, handleSubmit } = useForm();
+    const [updateProfile, updating, updateError] = useUpdateProfile(auth);
     const navigate = useNavigate();
     const [token] = useToken(user || gUser);
 
-    if (loading || gLoading) {
+    if (loading || gLoading || updating) {
         return <Loading></Loading>
     }
 
@@ -28,12 +29,13 @@ const Register = () => {
     }
 
     let signInError;
-    if (error || gError) {
-        signInError = <p className='text-red-600'>{error?.message || gError?.message}</p>
+    if (error || gError || updateError) {
+        signInError = <p className='text-red-600'>{error?.message || gError?.message || updateError?.message}</p>
     }
 
     const onSubmit = async data => {
         await createUserWithEmailAndPassword(data.email, data.password);
+        await updateProfile({ displayName: data.name });
         toast('verification email sent')
     };
     return (
