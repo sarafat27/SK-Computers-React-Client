@@ -4,6 +4,11 @@ import Part from './Part';
 const Parts = () => {
     const [parts, setParts] = useState([])
 
+    // const length = parts?.length
+    // const start = length - 6;
+    // const lastParts = parts.slice(start, length)
+    // console.log(lastParts)
+
     useEffect(() => {
         fetch('http://localhost:5000/part')
             .then(res => res.json())
