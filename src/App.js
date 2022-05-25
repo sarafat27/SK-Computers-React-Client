@@ -13,6 +13,7 @@ import Dashboard from './Pages/Dashboard/Dashboard';
 import MyOrders from './Pages/Dashboard/MyOrders';
 import AddReview from './Pages/Dashboard/AddReview';
 import MyProfile from './Pages/Dashboard/MyProfile';
+import ManageUsers from './Pages/Dashboard/ManageUsers';
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
           <Route index element={<MyOrders></MyOrders>}></Route>
           <Route path='addReview' element={<AddReview></AddReview>}></Route>
           <Route path='myProfile' element={<MyProfile></MyProfile>}></Route>
+          <Route path='users' element={<ManageUsers></ManageUsers>}></Route>
         </Route>
       </Routes>
       <ToastContainer></ToastContainer>
