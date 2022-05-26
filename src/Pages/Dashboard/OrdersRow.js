@@ -1,6 +1,7 @@
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const OrdersRow = ({ order, index, setDeleteProduct }) => {
     return (
@@ -26,9 +27,17 @@ const OrdersRow = ({ order, index, setDeleteProduct }) => {
                     <FontAwesomeIcon icon={faTrash} />
                 </label>
             </th>
-            <th><button className='btn btn-xs font-bold'>
-                Pay
-            </button></th>
+            <th>
+                {!order.paid ? <Link to={`/dashboard/payment/${order._id}`}>
+                    <button className='btn btn-xs font-bold'>
+                        Pay
+                    </button>
+                </Link> :
+                    <button className='btn btn-xs font-bold'>
+                        Paid
+                    </button>
+                }
+            </th>
         </tr>
     );
 };

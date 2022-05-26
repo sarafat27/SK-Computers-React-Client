@@ -1,8 +1,12 @@
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React from 'react';
+import React, { useState } from 'react';
 
 const ManageOrdersRow = ({ order, index, setDeleteProduct }) => {
+    const [status, setStatus] = useState('unpaid');
+    if (order.paid) {
+        setStatus('pending')
+    }
     return (
         <tr>
             <td>{index + 1}</td>
@@ -22,13 +26,23 @@ const ManageOrdersRow = ({ order, index, setDeleteProduct }) => {
             <td>{order.quantity}</td>
             <td>{order.totalPrice}</td>
             <th>
-                <label onClick={() => setDeleteProduct(order)} htmlFor="delete-modal">
-                    <FontAwesomeIcon icon={faTrash} />
+                <label onClick={() => status === 'unpaid' ? setDeleteProduct(order) : setDeleteProduct('')}
+                    htmlFor="delete-modal">
+                    <FontAwesomeIcon className={status !== 'unpaid' ? 'opacity-25' : ''} icon={faTrash} />
                 </label>
             </th>
-            <th><button className='btn btn-xs font-bold'>
-                Pay
-            </button></th>
+            <th>
+                <button className='btn btn-xs font-bold'>
+                    {status}
+                </button>
+            </th>
+            <th>
+                <button onClick={() => status === 'pending' && setStatus('shipped')} className='btn btn-xs font-bold'>
+                    {status === 'shipped' && 'Already shipped'}
+                    {status === 'pending' && 'make shipped'}
+                    {status === 'unpaid' && 'message user'}
+                </button>
+            </th>
         </tr>
     );
 };
