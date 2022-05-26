@@ -1,40 +1,26 @@
-import { useAuthState } from 'react-firebase-hooks/auth';
-import { useNavigate } from 'react-router-dom';
 import React, { useState } from 'react';
-import auth from '../../firebase.init';
-import { signOut } from 'firebase/auth';
-import OrdersRow from './OrdersRow';
 import { useQuery } from 'react-query';
 import Loading from '../Shared/Loading';
 import DeleteProduct from './DeleteProduct';
+import ManageOrdersRow from './ManageOrdersRow';
 
-const MyOrders = () => {
+const ManageOrders = () => {
     const [deleteProduct, setDeleteProduct] = useState(null)
-    const [user] = useAuthState(auth);
-    const navigate = useNavigate();
-
-    const { data: orders, isLoading, refetch } = useQuery('orders', () => fetch(`http://localhost:5000/orders?email=${user.email}`, {
-        method: 'GET',
-        headers: {
-            authorization: `Bearer ${localStorage.getItem('accessToken')}`
-        }
-    })
-        .then(res => {
-            if (res.status === 401 || res.status === 403) {
-                signOut(auth)
-                localStorage.removeItem('accessToken')
-                navigate('/login')
+    const { data: allOrders, isLoading, refetch } = useQuery(
+        'allOrders', () => fetch('http://localhost:5000/allOrders', {
+            headers: {
+                authorization: `Bearer ${localStorage.getItem('accessToken')}`
             }
-            return res.json()
-        }));
+        })
+            .then(res => res.json())
+    )
 
     if (isLoading) {
         return <Loading></Loading>
     }
-
     return (
         <div>
-            <h2 className='text-3xl text-center'>My orders</h2>
+            <h2 className='text-3xl text-center'>Manage all orders</h2>
             <div className="overflow-x-auto w-full my-10">
                 <table className="table w-full">
                     <thead>
@@ -49,12 +35,12 @@ const MyOrders = () => {
                     </thead>
                     <tbody>
                         {
-                            orders.map((order, index) => <OrdersRow
+                            allOrders.map((order, index) => <ManageOrdersRow
                                 key={index}
                                 index={index}
                                 order={order}
                                 setDeleteProduct={setDeleteProduct}
-                            ></OrdersRow>)
+                            ></ManageOrdersRow>)
                         }
                     </tbody>
                 </table>
@@ -69,4 +55,4 @@ const MyOrders = () => {
     );
 };
 
-export default MyOrders;
+export default ManageOrders;

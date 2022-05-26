@@ -59,6 +59,8 @@ const Purchase = () => {
                 console.log(data)
                 if (data.insertedId) {
                     toast('Your order is processing.please pay to confirm.')
+                    event.target.reset()
+                    setTotalPrice('')
                 }
                 else {
                     toast.error('There is an error in your order')
