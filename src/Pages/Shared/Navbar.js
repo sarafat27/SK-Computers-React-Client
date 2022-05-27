@@ -15,7 +15,11 @@ const Navbar = () => {
         <li><Link to='/'>Home</Link></li>
         <li><Link to='/blogs'>Blogs</Link></li>
         <li>{user && <Link to='/dashboard'>Dashboard</Link>}</li>
-        <li>{user ? <Link onClick={logout} to='/login'>Logout</Link> : <Link to='/login'>Login</Link>}</li>
+        <li>{user ? <>
+            <Link onClick={logout} to='/login'>Logout</Link>
+            <p>{user?.displayName}</p>
+        </> : <Link to='/login'>Login</Link>}</li>
+        <li><Link to='/portfolio'>My portfolio</Link></li>
     </>
     return (
         <div className="navbar bg-gray-600 text-white">
@@ -28,7 +32,7 @@ const Navbar = () => {
                         {menu}
                     </ul>
                 </div>
-                <p className="btn btn-ghost normal-case text-2xl">Sk computers</p>
+                <p className="btn btn-ghost normal-case text-2xl mr-7">Sk computers</p>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal p-0">
