@@ -3,80 +3,80 @@
         "name": "monitor",
         "image": "https://i.pcmag.com/imagery/reviews/05R7ApclhnnV0xTx4drU4BE-1.fit_lim.size_625x365.v1617290389.jpg",
         "description": "This is 21 inch monitor.Its display is curved and very comfortable to watch.",
-        "minimumOrderQuantity": 200,
+        "minimumOrderQuantity": 50,
         "availableQuantity": 30000,
-        "price": 5000
+        "price": 50
     },
     {
         "name": "mouse",
         "image": "https://upload.wikimedia.org/wikipedia/commons/2/22/3-Tasten-Maus_Microsoft.jpg",
         "description": "This is a mouse.There are two versions of it,wired and wireless.",
-        "minimumOrderQuantity": 1000,
+        "minimumOrderQuantity": 70,
         "availableQuantity": 100000,
-        "price": 300
+        "price": 10
     },
     {
         "name": "keyboard",
         "image": "https://media.istockphoto.com/vectors/cartoon-black-and-white-computer-keyboard-template-set-vector-vector-id1164069847?k=20&m=1164069847&s=612x612&w=0&h=JzNlNrdQhCN_b7wnsALbpi6oRR6Kpi1Djj3CN3txRM8=",
         "description": "This is a keyboard.There are three versions of it,black,white and RGV.",
-        "minimumOrderQuantity": 500,
+        "minimumOrderQuantity": 60,
         "availableQuantity": 100000,
-        "price": 500
+        "price": 10
     },
     {
         "name": "pen drive",
         "image": "https://5.imimg.com/data5/SK/VM/MY-57481577/pen-drive-500x500.jpg",
         "description": "This is a pen drive,which is used to transfer data from one computer to another.",
-        "minimumOrderQuantity": 10000,
+        "minimumOrderQuantity": 100,
         "availableQuantity": 500000,
-        "price": 300
+        "price": 5
     },
     {
         "name": "ram",
         "image": "https://www.howtogeek.com/wp-content/uploads/2019/08/ram-installed-in-a-computers-motherboard.jpeg?height=200p&trim=2,2,2,2",
         "description": "This is random access memory.It is the temporary memory of a comuter.",
-        "minimumOrderQuantity": 1000,
+        "minimumOrderQuantity": 50,
         "availableQuantity": 100000,
-        "price": 3000
+        "price": 12
     },
     {
         "name": "ssd",
         "image": "https://www.startech.com.bd/image/cache/catalog/ssd/western-digital/green-1tb-sata/green-1tb-sata-02-500x500.jpg",
         "description": "This is solid state drive.It is a storage device and very fast then hdd",
-        "minimumOrderQuantity": 1000,
+        "minimumOrderQuantity": 40,
         "availableQuantity": 50000,
-        "price": 2500
+        "price": 15
     },
     {
         "name": "hdd",
         "image": "https://esus-it.ie/eng_pl_Hard-Disc-Drive-dedicated-for-HP-server-2-5-capacity-600GB-15000RPM-HDD-SAS-12Gb-s-759548-001-RFB-REFURBISHED-37688_1.jpg",
         "description": "This is hard disk drive.It is also used as a storage device.",
-        "minimumOrderQuantity": 1000,
+        "minimumOrderQuantity": 50,
         "availableQuantity": 50000,
-        "price": 2000
+        "price": 15
     },
     {
         "name": "cd drive",
         "image": "https://upload.wikimedia.org/wikipedia/commons/7/70/Sony_CRX310S-Internal-PC-DVD-Drive-Opened.jpg",
         "description": "This is compact disk drive.It is used as a driver for compact disk",
-        "minimumOrderQuantity": 500,
+        "minimumOrderQuantity": 40,
         "availableQuantity": 70000,
-        "price": 1500
+        "price": 20
     },
     {
         "name": "ups",
         "image": "https://sc04.alicdn.com/kf/HTB1EfKaOZfpK1RjSZFO7616nFXay.png",
         "description": "This is uninterrupted power supply machine.It is used when power supply is interrupted",
-        "minimumOrderQuantity": 800,
+        "minimumOrderQuantity": 30,
         "availableQuantity": 600000,
-        "price": 1500
+        "price": 15
     },
     {
         "name": "processor",
         "image": "https://5.imimg.com/data5/AJ/PJ/MY-25613020/intel-computer-processor-500x500.jpg",
         "description": "This is a processor.Which is the most important part of a cpu.",
-        "minimumOrderQuantity": 900,
+        "minimumOrderQuantity": 40,
         "availableQuantity": 55000,
-        "price": 8000
+        "price": 50
     }
 ]

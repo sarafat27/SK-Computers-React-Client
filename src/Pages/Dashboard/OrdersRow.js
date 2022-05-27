@@ -23,8 +23,8 @@ const OrdersRow = ({ order, index, setDeleteProduct }) => {
             <td>{order.quantity}</td>
             <td>{order.totalPrice}</td>
             <th>
-                <label onClick={() => setDeleteProduct(order)} htmlFor="delete-modal">
-                    <FontAwesomeIcon icon={faTrash} />
+                <label onClick={() => order.paid ? setDeleteProduct('') : setDeleteProduct(order)} htmlFor="delete-modal">
+                    <FontAwesomeIcon className={order.paid ? 'opacity-25' : ''} icon={faTrash} />
                 </label>
             </th>
             <th>
@@ -33,9 +33,14 @@ const OrdersRow = ({ order, index, setDeleteProduct }) => {
                         Pay
                     </button>
                 </Link> :
-                    <button className='btn btn-xs font-bold'>
-                        Paid
-                    </button>
+                    <div>
+                        <p>
+                            <span className='text-success'>paid</span>
+                        </p>
+                        <p>
+                            Transaction id: <span className='text-success'>{order.transactionId}</span>
+                        </p>
+                    </div>
                 }
             </th>
         </tr>

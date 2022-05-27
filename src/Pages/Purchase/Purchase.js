@@ -41,6 +41,7 @@ const Purchase = () => {
         const order = {
             product: name,
             image,
+            customer: user.displayName,
             email: user.email,
             quantity: event.target.quantity.value,
             totalPrice,
@@ -56,7 +57,6 @@ const Purchase = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data)
                 if (data.insertedId) {
                     toast('Your order is processing.please pay to confirm.')
                     event.target.reset()
@@ -77,7 +77,7 @@ const Purchase = () => {
                     <p>{description}</p>
                     <p className='font-bold'>min order quantity: {minimumOrderQuantity}</p>
                     <p className='font-bold'>available quantity: {availableQuantity}</p>
-                    <p className='font-bold'>price: {price}</p>
+                    <p className='font-bold'>price: ${price}</p>
                 </div>
             </div>
             <div className='my-10'>

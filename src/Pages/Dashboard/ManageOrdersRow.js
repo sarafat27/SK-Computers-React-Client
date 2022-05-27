@@ -1,12 +1,16 @@
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 const ManageOrdersRow = ({ order, index, setDeleteProduct }) => {
     const [status, setStatus] = useState('unpaid');
-    if (order.paid) {
-        setStatus('pending')
-    }
+
+    useEffect(() => {
+        if (status === 'unpaid' && order?.paid) {
+            setStatus('pending')
+        }
+    }, [order, status])
+
     return (
         <tr>
             <td>{index + 1}</td>
