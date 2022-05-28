@@ -3,6 +3,7 @@ import React from 'react';
 import { useQuery } from 'react-query';
 import Loading from '../Shared/Loading';
 import { faStar } from '@fortawesome/free-solid-svg-icons'
+import reviewPic from '../../images/review/review.jpg'
 
 const Reviews = () => {
     const { data: reviews, isLoading } = useQuery(
@@ -29,7 +30,7 @@ const Reviews = () => {
                         <div className="card-body items-center text-center">
                             <div className="avatar">
                                 <div className="w-40 h-24 rounded">
-                                    <img src="https://thumbs.dreamstime.com/b/time-review-words-clock-chalkboard-watch-concept-40009136.jpg" alt='' />
+                                    <img src={reviewPic} alt='' />
                                 </div>
                             </div>
                             <h2 className="card-title font-bold text-green-400">{review.name}</h2>
