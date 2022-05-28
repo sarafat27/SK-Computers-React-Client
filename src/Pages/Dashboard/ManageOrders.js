@@ -7,7 +7,7 @@ import ManageOrdersRow from './ManageOrdersRow';
 const ManageOrders = () => {
     const [deleteProduct, setDeleteProduct] = useState(null)
     const { data: allOrders, isLoading, refetch } = useQuery(
-        'allOrders', () => fetch('http://localhost:5000/allOrders', {
+        'allOrders', () => fetch('https://rocky-reaches-51313.herokuapp.com/allOrders', {
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`
             }

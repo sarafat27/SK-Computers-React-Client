@@ -6,7 +6,7 @@ import { faStar } from '@fortawesome/free-solid-svg-icons'
 
 const Reviews = () => {
     const { data: reviews, isLoading } = useQuery(
-        'reviews', () => fetch('http://localhost:5000/review', {
+        'reviews', () => fetch('https://rocky-reaches-51313.herokuapp.com/review', {
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`
             }

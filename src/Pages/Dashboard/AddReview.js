@@ -23,7 +23,7 @@ const AddReview = () => {
             review: event.target.reviewText.value,
             ratings: parseInt(ratings)
         }
-        fetch('http://localhost:5000/review', {
+        fetch('https://rocky-reaches-51313.herokuapp.com/review', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

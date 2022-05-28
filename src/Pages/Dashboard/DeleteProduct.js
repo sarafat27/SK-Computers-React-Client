@@ -5,7 +5,7 @@ const DeleteProduct = ({ deleteProduct, setDeleteProduct, refetch, API }) => {
     const { _id } = deleteProduct;
 
     const handleDelete = () => {
-        fetch(`http://localhost:5000/${API}/${_id}`, {
+        fetch(`https://rocky-reaches-51313.herokuapp.com/${API}/${_id}`, {
             method: 'DELETE',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`

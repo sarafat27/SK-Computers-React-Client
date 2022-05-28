@@ -13,7 +13,7 @@ const Purchase = () => {
     const [quantityError, setQuantityError] = useState('')
 
     useEffect(() => {
-        fetch(`http://localhost:5000/part/${id}`, {
+        fetch(`https://rocky-reaches-51313.herokuapp.com/part/${id}`, {
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`
             }
@@ -48,7 +48,7 @@ const Purchase = () => {
             phone: event.target.phone.value
         }
 
-        fetch('http://localhost:5000/order', {
+        fetch('https://rocky-reaches-51313.herokuapp.com/order', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

@@ -10,7 +10,7 @@ const Parts = () => {
     // console.log(lastParts)
 
     useEffect(() => {
-        fetch('http://localhost:5000/part')
+        fetch('https://rocky-reaches-51313.herokuapp.com/part')
             .then(res => res.json())
             .then(data => setParts(data))
     }, []);

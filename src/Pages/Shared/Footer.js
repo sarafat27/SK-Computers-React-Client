@@ -23,6 +23,7 @@ const Footer = () => {
                 <a href=' ' className="link link-hover">Privacy policy</a>
                 <a href=' ' className="link link-hover">Cookie policy</a>
             </div>
+            <p className='text-center mt-5'><small>Copyright reserved by SK Computers @ {new Date().getFullYear()}</small></p>
         </footer>
     );
 };

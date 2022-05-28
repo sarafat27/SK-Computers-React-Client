@@ -15,7 +15,7 @@ const MyProfile = () => {
             phone: event.target.phone.value,
             linkedIn: event.target.linkedIn.value,
         }
-        fetch(`http://localhost:5000/profile/${user.email}`, {
+        fetch(`https://rocky-reaches-51313.herokuapp.com/profile/${user.email}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json',
